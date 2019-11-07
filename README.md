@@ -1,14 +1,19 @@
 # 🚀 Welcome to ReactJS Mentoring project!
 
-Run 
+To bundle the application
+
 ```
 npm run build
 ```
 
-or
+To start dev server
 
 ```
-yarn build
+npm run dev
 ```
 
-to bundle the application
+To run tests
+
+```
+npm run test
+```
