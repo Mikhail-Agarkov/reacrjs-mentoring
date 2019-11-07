@@ -1,0 +1,22 @@
+{
+  "name": "reacrjs-mentoring",
+  "version": "1.0.0",
+  "description": "ReactJS Global Mentoring Program Q42019",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikhail-Agarkov/reacrjs-mentoring.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikhail-Agarkov/reacrjs-mentoring/issues"
+  },
+  "homepage": "https://github.com/Mikhail-Agarkov/reacrjs-mentoring#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
