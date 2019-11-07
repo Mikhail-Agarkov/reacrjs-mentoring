@@ -4,9 +4,10 @@
   "description": "ReactJS Global Mentoring Program Q42019",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "test": "jest --config jest.config.json",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "coverageDirectory": "coverage",
+  "testRegex": "((\\.|/*.)(spec))\\.js?$"
+}
