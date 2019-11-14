@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
 
     output: {
         filename: '[name].bundle.js',
@@ -16,7 +16,7 @@ module.exports = {
 
     plugins: [
         new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({template: "./src/index.html"}),
         new CleanWebpackPlugin(),
         ...(isDev ? [] : [new MiniCssExtractPlugin()])
     ],
@@ -30,20 +30,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 include: [path.resolve(__dirname, 'src')],
-                loader: 'babel-loader',
-
-                options: {
-                    plugins: ['syntax-dynamic-import'],
-
-                    presets: [
-                        [
-                            '@babel/preset-env',
-                            {
-                                modules: false
-                            }
-                        ]
-                    ]
-                }
+                loader: 'babel-loader'
             },
             {
                 test: /\.less$/,
@@ -53,7 +40,7 @@ module.exports = {
                     'css-loader',
                     'less-loader'
                 ],
-            },
+            }
         ]
     }
 };
