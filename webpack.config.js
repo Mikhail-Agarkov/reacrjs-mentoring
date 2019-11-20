@@ -38,16 +38,22 @@ module.exports = {
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: "[name]__[local]___[hash:base64:5]",
+                                localIdentName: '[name]__[local]___[hash:base64:5]',
                             },
                             sourceMap: isDev
                         }
                     },
                     'sass-loader'
-                ],
+                ]
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/,
+                use: [
+                    'file-loader'
+                ]
             }
         ]
     }

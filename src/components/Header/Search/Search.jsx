@@ -27,7 +27,7 @@ export default class Search extends React.PureComponent {
         return (
             <section className={styles.content}>
                 <h2 className={styles.title}>{this.props.title}</h2>
-                <form onSubmit={this.searchHandler}>
+                <form className={styles.form} onSubmit={this.searchHandler}>
                     <input type='text'  className={styles.search} placeholder={this.props.placeholder} ref={this.input}/>
                     <button className={styles.button}>{this.props.button}</button>
                 </form>

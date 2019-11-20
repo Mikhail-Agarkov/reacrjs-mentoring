@@ -1,5 +1,15 @@
+.content {
+  display: flex;
+  margin: 15px 0;
+}
+
+.buttonGroup {
+  margin-left: 20px;
+}
+
 .button {
   border: none;
+  outline: none;
   padding: 0 20px;
   background-color: rgba(66, 66, 66, 0.68);
   color: #FFFFFF;
@@ -7,6 +17,23 @@
   font-size: 15px;
   line-height: 40px;
   text-transform: uppercase;
+  cursor: pointer;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+
+  &:hover {
+    background-color: #dd4957;
+  }
+
+  &:active {
+    background-color: #c4414d;
+  }
 }
 
 .text {

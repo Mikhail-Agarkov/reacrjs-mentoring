@@ -1,13 +1,14 @@
 import React from 'react';
+import styles from './filmcard.module.scss';
 
 const FilmCard = (props) => (
-    <div>
-        <img src={props.src} alt={props.alt}/>
-        <div>
+    <div className={styles.content} key={props.key}>
+        <img src={props.src} alt={props.alt} className={styles.cover}/>
+        <div className={styles.info}>
             <span>{props.title}</span>
-            <span>{props.date}</span>
+            <span className={styles.date}>{props.date}</span>
         </div>
-        <span>{props.description}</span>
+        <span className={styles.genre}>{props.genre}</span>
     </div>
 );
 
