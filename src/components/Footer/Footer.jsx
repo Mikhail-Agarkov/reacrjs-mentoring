@@ -1,8 +1,10 @@
 import React from 'react';
+import styles from './footer.module.scss'
+import Logo from "../Logo/Logo";
 
 const Footer = (props) => (
-    <footer>
-        <span>{props.logo}</span>
+    <footer className={styles.content}>
+        <Logo className={styles.logo}/>
     </footer>
 );
 

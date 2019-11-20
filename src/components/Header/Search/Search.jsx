@@ -1,5 +1,6 @@
 import React from 'react';
 import Filter from '../../Filter/Filter';
+import styles from './search.module.scss'
 
 export default class Search extends React.PureComponent {
 
@@ -24,11 +25,11 @@ export default class Search extends React.PureComponent {
 
     render() {
         return (
-            <section>
-                <h2>{this.props.title}</h2>
+            <section className={styles.content}>
+                <h2 className={styles.title}>{this.props.title}</h2>
                 <form onSubmit={this.searchHandler}>
-                    <input type='text' placeholder={this.props.placeholder} ref={this.input}/>
-                    <button>{this.props.button}</button>
+                    <input type='text'  className={styles.search} placeholder={this.props.placeholder} ref={this.input}/>
+                    <button className={styles.button}>{this.props.button}</button>
                 </form>
                 <Filter title='Search by' buttons={
                     [

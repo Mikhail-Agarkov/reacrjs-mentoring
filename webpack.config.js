@@ -33,12 +33,20 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.less$/,
+                test: /\.s[ac]ss$/,
                 include: [path.resolve(__dirname, 'src')],
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                    'css-loader',
-                    'less-loader'
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                localIdentName: "[name]__[local]___[hash:base64:5]",
+                            },
+                            sourceMap: isDev
+                        }
+                    },
+                    'sass-loader'
                 ],
             }
         ]

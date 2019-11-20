@@ -1,5 +1,6 @@
 import React from 'react';
 import Filter from "../Filter/Filter";
+import styles from './status.module.scss'
 
 export default class StatusBar extends React.PureComponent {
 
@@ -8,8 +9,9 @@ export default class StatusBar extends React.PureComponent {
     };
 
     render() {
+        console.log(styles.content);
         return (
-            <section>
+            <section className={styles.content}>
                 <Filter title='Sort by' buttons={
                     [
                         {text: 'Release date', handler: () => this.sortByHandler('Release date'), key: 1},
