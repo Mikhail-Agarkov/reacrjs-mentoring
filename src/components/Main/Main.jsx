@@ -7,7 +7,7 @@ export default class Main extends React.PureComponent {
     render() {
         return (
             <main>
-                <StatusBar />
+                <StatusBar/>
                 <FilmList films={
                     [
                         {
@@ -59,7 +59,7 @@ export default class Main extends React.PureComponent {
                             key: 6
                         }
                     ]
-                } />
+                }/>
             </main>
         );
     }

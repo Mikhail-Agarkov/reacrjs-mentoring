@@ -8,9 +8,9 @@ export default class Header extends React.PureComponent {
         return (
             <header className={styles.header}>
                 <div className={styles.content}>
-                    <Logo />
+                    <Logo/>
                     <div className={styles.body}>
-                        <Search title='Find your movie' placeholder='Search' button='Search' />
+                        <Search title='Find your movie' placeholder='Search' button='Search'/>
                     </div>
                 </div>
             </header>
