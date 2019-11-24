@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilmCard should render correctly 1`] = `
+exports[`FilmCard should render film card correctly 1`] = `
 <div
   className="content"
+  key="2516"
 >
   <img
     alt="image alt text"

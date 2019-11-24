@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmCard should render film list section correctly 1`] = `
+<section
+  className="content"
+>
+  <FilmCard
+    film={
+      Object {
+        "alt": "image alt text",
+        "date": "2019",
+        "genre": "Fantasy",
+        "key": "2516",
+        "src": "src/to/image",
+        "title": "Film Title",
+      }
+    }
+  />
+  <FilmCard
+    film={
+      Object {
+        "alt": "another image alt text",
+        "date": "2020",
+        "genre": "Comedy",
+        "key": "6498",
+        "src": "src/to/another/image",
+        "title": "Another Film Title",
+      }
+    }
+  />
+</section>
+`;

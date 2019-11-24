@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render Footer correctly 1`] = `
+<footer
+  className="content"
+>
+  <div
+    className="logo"
+  >
+    <Logo />
+  </div>
+</footer>
+`;

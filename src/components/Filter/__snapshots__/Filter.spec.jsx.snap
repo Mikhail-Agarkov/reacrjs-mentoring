@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should render Filter correctly 1`] = `
+<div
+  className="content"
+>
+  <span
+    className="text"
+  >
+    Sort by
+  </span>
+  <div
+    className="buttonGroup"
+  >
+    <button
+      className="button"
+      key="1"
+      onClick="someFunc()"
+    >
+      genre
+    </button>
+    <button
+      className="button"
+      key="2"
+      onClick="someFunc()"
+    >
+      title
+    </button>
+  </div>
+</div>
+`;

@@ -5,7 +5,8 @@
     "enzyme-to-json/serializer"
   ],
   "coveragePathIgnorePatterns": [
-    "ErrorBoundary.jsx"
+    "ErrorBoundary.jsx",
+    "src/index.jsx"
   ],
   "setupFiles": [
     "./src/enzyme.js"
