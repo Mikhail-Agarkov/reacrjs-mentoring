@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmCard should render correctly 1`] = `
+<div
+  className="content"
+>
+  <img
+    alt="image alt text"
+    className="cover"
+    src="src/to/image"
+  />
+  <div
+    className="info"
+  >
+    <span>
+      Film Title
+    </span>
+    <span
+      className="date"
+    >
+      2019
+    </span>
+  </div>
+  <span
+    className="genre"
+  >
+    Fantasy
+  </span>
+</div>
+`;

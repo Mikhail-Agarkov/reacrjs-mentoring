@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest --config jest.config.json --passWithNoTests",
+    "test": "jest --config jest.config.json",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
@@ -32,14 +32,19 @@
     "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "inline-source-map": "^0.6.2",
     "jest": "^24.9.0",
+    "jest-css-modules": "^2.1.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "path": "^0.12.7",
