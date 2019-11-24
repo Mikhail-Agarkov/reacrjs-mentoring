@@ -1,0 +1,33 @@
+.content {
+  padding: 0 20px;
+  width: 324px;
+  height: 540px;
+  font-family: Montserrat;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cover {
+  height: 455px;
+  width: 324px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 8px;
+  font-size: 18px;
+  opacity: 0.9;
+
+  .date {
+    border: 1px solid #979797;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+}
+
+.genre {
+  font-size: 14px;
+  opacity: 0.5;
+}
