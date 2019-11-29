@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should render logotype of the site correctly 1`] = `
+<main>
+  <StatusBar />
+  <FilmList
+    films={
+      Array [
+        Object {
+          "alt": "Final Fantasy: Kingsglaive cover",
+          "date": 2016,
+          "genre": "Drama/Fantasy",
+          "key": 1,
+          "src": "./assets/sample/ffkingsglaive.jpg",
+          "title": "Final Fantasy: Kingsglaive",
+        },
+        Object {
+          "alt": "Final Fantasy: Advent Children cover",
+          "date": 2005,
+          "genre": "Drama/Fantasy",
+          "key": 2,
+          "src": "./assets/sample/ffadventchildren.png",
+          "title": "Final Fantasy: Advent Children",
+        },
+        Object {
+          "alt": "Green Book cover",
+          "date": 2018,
+          "genre": "Drama/Comedy",
+          "key": 3,
+          "src": "./assets/sample/greenbook.jpg",
+          "title": "Green Book",
+        },
+        Object {
+          "alt": "Parasite cover",
+          "date": 2019,
+          "genre": "Drama/Mystery",
+          "key": 4,
+          "src": "./assets/sample/parasite.jpeg",
+          "title": "Parasite",
+        },
+        Object {
+          "alt": "The House That Jack Built cover",
+          "date": 2018,
+          "genre": "Drama/Thriller",
+          "key": 5,
+          "src": "./assets/sample/jackhouse.jpg",
+          "title": "The House That Jack Built",
+        },
+        Object {
+          "alt": "Joker cover",
+          "date": 2019,
+          "genre": "Drama/Thriller",
+          "key": 6,
+          "src": "./assets/sample/joker.jpg",
+          "title": "Joker",
+        },
+      ]
+    }
+  />
+</main>
+`;

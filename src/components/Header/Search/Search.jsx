@@ -15,7 +15,7 @@ export default class Search extends React.PureComponent {
     }
 
     searchHandler = (event) => {
-        event.preventDefault();
+        //event.preventDefault();
         //api call (this.input.current.value, this.state.searchBy)
     };
 

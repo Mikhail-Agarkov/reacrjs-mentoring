@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './filmcard.module.scss';
 
 const FilmCard = (props) => {
-    const {key, src, alt, title, date, genre} = props;
+    const {key, src, alt, title, date, genre} = props['film'];
     return (
         <div className={styles.content} key={key}>
             <img src={src} alt={alt} className={styles.cover}/>

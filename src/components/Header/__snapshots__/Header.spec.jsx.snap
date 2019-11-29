@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render Header correctly 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="content"
+  >
+    <Logo />
+    <div
+      className="body"
+    >
+      <Search
+        button="Search"
+        placeholder="Search"
+        title="Find your movie"
+      />
+    </div>
+  </div>
+</header>
+`;

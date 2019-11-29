@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render Header correctly 1`] = `
+<Fragment>
+  <ErrorBoundary>
+    <Header
+      logo="Netflix Roulette"
+    />
+  </ErrorBoundary>
+  <ErrorBoundary>
+    <Main />
+  </ErrorBoundary>
+  <ErrorBoundary>
+    <Footer
+      logo="Netflix Roulette"
+    />
+  </ErrorBoundary>
+</Fragment>
+`;

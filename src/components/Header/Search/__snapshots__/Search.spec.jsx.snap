@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should render Search correctly 1`] = `
+<section
+  className="content"
+>
+  <h2
+    className="title"
+  >
+    Find your movie
+  </h2>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      className="search"
+      placeholder="Search"
+      type="text"
+    />
+    <button
+      className="button"
+    >
+      Search
+    </button>
+  </form>
+  <Filter
+    buttons={
+      Array [
+        Object {
+          "handler": [Function],
+          "key": 1,
+          "text": "title",
+        },
+        Object {
+          "handler": [Function],
+          "key": 2,
+          "text": "genre",
+        },
+      ]
+    }
+    title="Search by"
+  />
+</section>
+`;

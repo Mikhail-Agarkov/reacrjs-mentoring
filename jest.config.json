@@ -1,5 +1,21 @@
 {
   "verbose": true,
   "coverageDirectory": "coverage",
-  "testRegex": "((\\.|/*.)(spec))\\.js?$"
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "coveragePathIgnorePatterns": [
+    "ErrorBoundary.jsx",
+    "src/index.jsx"
+  ],
+  "setupFiles": [
+    "./src/enzyme.js"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+  },
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx}"
+  ]
 }

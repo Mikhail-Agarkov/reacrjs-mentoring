@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusBar should render Status Bar correctly 1`] = `
+<section
+  className="content"
+>
+  <Filter
+    buttons={
+      Array [
+        Object {
+          "handler": [Function],
+          "key": 1,
+          "text": "Release date",
+        },
+        Object {
+          "handler": [Function],
+          "key": 2,
+          "text": "Rating",
+        },
+      ]
+    }
+    title="Sort by"
+  />
+</section>
+`;
