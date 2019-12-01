@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search should render Search correctly 1`] = `
-<section
-  className="content"
->
+exports[`Search should render with given state from Redux store 1`] = `
+<section>
   <h2
     className="title"
   >
@@ -24,22 +22,32 @@ exports[`Search should render Search correctly 1`] = `
       Search
     </button>
   </form>
-  <Filter
-    buttons={
-      Array [
-        Object {
-          "handler": [Function],
-          "key": 1,
-          "text": "title",
-        },
-        Object {
-          "handler": [Function],
-          "key": 2,
-          "text": "genre",
-        },
-      ]
-    }
-    title="Search by"
-  />
+  <div
+    className="content"
+  >
+    <span
+      className="text"
+    >
+      Search by
+    </span>
+    <div
+      className="buttonGroup"
+    >
+      <button
+        className="button"
+        data-selected={true}
+        onClick={[Function]}
+      >
+        Title
+      </button>
+      <button
+        className="button"
+        data-selected={false}
+        onClick={[Function]}
+      >
+        Genre
+      </button>
+    </div>
+  </div>
 </section>
 `;

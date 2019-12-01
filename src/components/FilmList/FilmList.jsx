@@ -5,7 +5,7 @@ import styles from './filmlist.module.scss';
 
 const FilmList = (props) => (
     <section className={styles.content}>
-        {typeof props.films !== 'undefined' ? (
+        {props.films && props.films.length ? (
             props.films.map(film => <FilmCard film={film}/>)
         ) : (
             <div className={styles.notFound}>No films found.</div>

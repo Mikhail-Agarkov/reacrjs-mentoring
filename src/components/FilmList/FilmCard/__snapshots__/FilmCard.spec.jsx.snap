@@ -6,7 +6,7 @@ exports[`FilmCard should render film card correctly 1`] = `
   key="2516"
 >
   <img
-    alt="image alt text"
+    alt="Film Title"
     className="cover"
     src="src/to/image"
   />
@@ -25,7 +25,8 @@ exports[`FilmCard should render film card correctly 1`] = `
   <span
     className="genre"
   >
-    Fantasy
+    Fantasy, Animation
+     
   </span>
 </div>
 `;

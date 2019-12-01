@@ -1,25 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StatusBar should render Status Bar correctly 1`] = `
+exports[`StatusBar should render with given state from Redux store 1`] = `
 <section
   className="content"
 >
-  <Filter
-    buttons={
-      Array [
-        Object {
-          "handler": [Function],
-          "key": 1,
-          "text": "Release date",
-        },
-        Object {
-          "handler": [Function],
-          "key": 2,
-          "text": "Rating",
-        },
-      ]
-    }
-    title="Sort by"
-  />
+  <div
+    className="content"
+  >
+    <span
+      className="text"
+    >
+      Sort by
+    </span>
+    <div
+      className="buttonGroup"
+    >
+      <button
+        className="button"
+        data-selected={true}
+        onClick={[Function]}
+      >
+        Release date
+      </button>
+      <button
+        className="button"
+        data-selected={false}
+        onClick={[Function]}
+      >
+        Rating
+      </button>
+    </div>
+  </div>
 </section>
 `;

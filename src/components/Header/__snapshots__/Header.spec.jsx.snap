@@ -11,7 +11,7 @@ exports[`Header should render Header correctly 1`] = `
     <div
       className="body"
     >
-      <Search
+      <Connect(Search)
         button="Search"
         placeholder="Search"
         title="Find your movie"

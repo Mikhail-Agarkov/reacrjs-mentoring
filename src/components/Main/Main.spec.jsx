@@ -1,11 +1,32 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {Provider} from 'react-redux';
+import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 
-import Main from './Main';
+import Main from "./Main";
+
+const mockStore = configureStore([]);
 
 describe('Main', () => {
-    it('should render logotype of the site correctly', () => {
-        const component = shallow(<Main/>);
-        expect(component).toMatchSnapshot();
+
+    let store = {};
+    let component;
+
+    beforeEach(() => {
+        store = mockStore({
+            sortBy: 'release_date'
+        });
+
+        store.dispatch = jest.fn();
+
+        component = renderer.create(
+            <Provider store={store}>
+                <Main/>
+            </Provider>
+        );
+    });
+
+    it('should render with given state from Redux store', () => {
+        expect(component.toJSON()).toMatchSnapshot();
     })
 });
