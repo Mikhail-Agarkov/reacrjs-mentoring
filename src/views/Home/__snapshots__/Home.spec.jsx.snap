@@ -8,7 +8,7 @@ exports[`Home should render Header correctly 1`] = `
     />
   </ErrorBoundary>
   <ErrorBoundary>
-    <Main />
+    <Connect(Main) />
   </ErrorBoundary>
   <ErrorBoundary>
     <Footer

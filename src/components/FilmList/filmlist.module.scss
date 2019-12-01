@@ -1,7 +1,16 @@
 .content {
+  min-height: 273px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 60px 20px;
   background-color: #232323;
+}
+
+.notFound {
+  color: #FFFFFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 273px;
 }

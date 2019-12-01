@@ -6,7 +6,8 @@
   ],
   "coveragePathIgnorePatterns": [
     "ErrorBoundary.jsx",
-    "src/index.jsx"
+    "src/index.jsx",
+    "src/App.jsx"
   ],
   "setupFiles": [
     "./src/enzyme.js"
