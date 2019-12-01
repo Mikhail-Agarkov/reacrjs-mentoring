@@ -1,25 +1,24 @@
 import React from 'react';
 import Filter from "../Filter/Filter";
 import styles from './status.module.scss'
+import {setSortBy} from "../../redux/actions";
+import {connect} from "react-redux";
 
-export default class StatusBar extends React.PureComponent {
+const StatusBar = (props) => (
+    <section className={styles.content}>
+        <Filter title='Sort by' selected={props.sortBy} buttons={
+            [
+                {text: 'Release date', value: 'release_date', handler: () => props.setSortBy('release_date'), key: 1},
+                {text: 'Rating', value: 'vote_average', handler: () => props.setSortBy('vote_average'), key: 2}
+            ]
+        }/>
+    </section>
+);
 
-    sortByHandler = (type) => {
-        //Api call
-    };
+const mapStateToProps = (state) => ({
+    sortBy: state.sortBy
+});
 
-    render() {
-        console.log(styles.content);
-        return (
-            <section className={styles.content}>
-                <Filter title='Sort by' buttons={
-                    [
-                        {text: 'Release date', handler: () => this.sortByHandler('Release date'), key: 1},
-                        {text: 'Rating', handler: () => this.sortByHandler('Rating'), key: 2}
-                    ]
-                }/>
-            </section>
-        );
-    }
+const mapDispatchToProps = {setSortBy: setSortBy};
 
-}
+export default connect(mapStateToProps, mapDispatchToProps)(StatusBar);

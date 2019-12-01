@@ -13,7 +13,7 @@
   padding: 0 20px;
   background-color: rgba(66, 66, 66, 0.68);
   color: #FFFFFF;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 15px;
   line-height: 40px;
   text-transform: uppercase;
@@ -27,6 +27,10 @@
     border-radius: 0 4px 4px 0;
   }
 
+  &[data-selected='true'] {
+    background-color: #F65261;
+  }
+
   &:hover {
     background-color: #dd4957;
   }
@@ -38,7 +42,7 @@
 
 .text {
   color: #FFFFFF;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 15px;
   line-height: 40px;
   text-transform: uppercase;
