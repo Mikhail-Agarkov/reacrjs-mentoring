@@ -19,7 +19,7 @@ class Search extends React.PureComponent {
 
     render() {
         return (
-            <section>
+            <section className={styles.body}>
                 <h2 className={styles.title}>{this.props.title}</h2>
                 <form className={styles.form} onSubmit={this.searchHandler.bind(this)}>
                     <input type='text' className={styles.search} placeholder={this.props.placeholder} ref={this.input}

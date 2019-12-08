@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from "./views/Home/Home";
+import Film from "./views/Film/Film";
 import {Provider} from 'react-redux'
 import store from './redux/redux';
 import {Route, Switch} from 'react-router-dom';
@@ -13,8 +14,8 @@ export default class App extends React.PureComponent {
             <ErrorBoundary>
                 <Provider store={store}>
                     <Switch>
-                        <Route exact path='/' component={Home}/>
-                        <Route path='/search' component={Home}/>
+                        <Route exact path={['/', '/search']} component={Home}/>
+                        <Route path='/film' component={Film}/>
                     </Switch>
                     <Footer logo='Netflix Roulette'/>
                 </Provider>

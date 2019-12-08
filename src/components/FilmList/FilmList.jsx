@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import FilmCard from './FilmCard/FilmCard';
 import styles from './filmlist.module.scss';
+import {viewFilmById} from "../../redux/actions";
 
 const FilmList = (props) => (
     <section className={styles.content}>
@@ -17,4 +18,6 @@ const mapStateToProps = (state) => ({
     films: state.films
 });
 
-export default connect(mapStateToProps)(FilmList);
+const mapDispatchToProps = {viewFilm: viewFilmById};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilmList);
