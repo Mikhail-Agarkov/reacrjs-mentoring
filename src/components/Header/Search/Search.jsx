@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchFilms, setSearchBy} from '../../../redux/actions'
 import Filter from '../../Filter/Filter';
-import styles from './search.module.scss'
+import styles from './search.module.scss';
+import {withRouter} from 'react-router-dom';
 
 class Search extends React.PureComponent {
 
@@ -13,7 +14,7 @@ class Search extends React.PureComponent {
 
     searchHandler = (event) => {
         event.preventDefault();
-        this.props.performSearch(this.input.current.value, this.props.searchBy, this.props.sortBy);
+        this.props.history.push(`/search?q=${this.input.current.value}&by=${this.props.searchBy}&sort=${this.props.sortBy}`);
     };
 
     render() {
@@ -21,7 +22,8 @@ class Search extends React.PureComponent {
             <section>
                 <h2 className={styles.title}>{this.props.title}</h2>
                 <form className={styles.form} onSubmit={this.searchHandler.bind(this)}>
-                    <input type='text' className={styles.search} placeholder={this.props.placeholder} ref={this.input}/>
+                    <input type='text' className={styles.search} placeholder={this.props.placeholder} ref={this.input}
+                           required/>
                     <button className={styles.button}>{this.props.button}</button>
                 </form>
                 <Filter title='Search by' selected={this.props.searchBy} buttons={
@@ -42,4 +44,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {performSearch: fetchFilms, setSearchBy: setSearchBy};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

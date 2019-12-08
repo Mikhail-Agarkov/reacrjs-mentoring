@@ -3,12 +3,28 @@ import StatusBar from "../StatusBar/StatusBar";
 import FilmList from "../FilmList/FilmList";
 import {connect} from "react-redux";
 import {fetchFilms} from "../../redux/actions";
+import {withRouter} from 'react-router-dom';
+import {parse} from 'query-string';
 
 class Main extends React.PureComponent {
 
     componentDidMount() {
-        this.props.fetchFilms();
+        this.performSearch();
     }
+
+    componentDidUpdate() {
+        this.performSearch();
+    }
+
+    performSearch = () => {
+        const {location} = this.props;
+        if (location.pathname === '/search') {
+            const values = parse(location.search);
+            this.props.fetchFilms(values.q, values.by, values.sort);
+        } else {
+            this.props.fetchFilms();
+        }
+    };
 
     render() {
         return (
@@ -20,6 +36,6 @@ class Main extends React.PureComponent {
     }
 }
 
-const mapDispatchToProps = { fetchFilms: fetchFilms};
+const mapDispatchToProps = {fetchFilms: fetchFilms};
 
-export default connect(null, mapDispatchToProps)(Main);
+export default withRouter(connect(null, mapDispatchToProps)(Main));
