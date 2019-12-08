@@ -1,6 +1,8 @@
 .content {
   display: flex;
-  padding: 20px 400px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
   font-family: Montserrat, sans-serif;
 
   .poster img {
@@ -8,6 +10,7 @@
   }
 
   .info {
+    width: 600px;
     padding: 40px;
     color: white;
 
@@ -44,10 +47,6 @@
         font-size: 26px;
         margin-right: 4px;
       }
-    }
-
-    .overview {
-      height: 150px;
     }
   }
 }

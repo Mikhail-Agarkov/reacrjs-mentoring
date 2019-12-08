@@ -20,7 +20,7 @@ const FilmInfo = (props) => {
                         <span><span className={styles.red}>{getYearFromDateString(release_date)}</span>year</span>
                         <span><span className={styles.red}>{runtime}</span>min</span>
                     </div>
-                    <div className={styles.overview}>
+                    <div>
                         {overview}
                     </div>
                 </div>
