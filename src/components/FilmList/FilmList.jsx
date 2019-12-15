@@ -2,9 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux'
 import FilmCard from './FilmCard/FilmCard';
 import styles from './filmlist.module.scss';
-import {viewFilmById} from "../../redux/actions";
 
-const FilmList = (props) => (
+const FilmList = props => (
     <section className={styles.content}>
         {props.films && props.films.length ? (
             props.films.map(film => <FilmCard film={film}/>)
@@ -14,10 +13,8 @@ const FilmList = (props) => (
     </section>
 );
 
-const mapStateToProps = (state) => ({
-    films: state.films
+const mapStateToProps = state => ({
+    films: state.movies.films
 });
 
-const mapDispatchToProps = {viewFilm: viewFilmById};
-
-export default connect(mapStateToProps, mapDispatchToProps)(FilmList);
+export default connect(mapStateToProps, null)(FilmList);

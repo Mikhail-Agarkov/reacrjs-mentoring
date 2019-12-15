@@ -11,6 +11,7 @@ module.exports = merge(common, {
     target: 'web',
 
     entry: [
+        'babel-polyfill',
         isDevMod && 'webpack-hot-middleware/client',
         './src/client/index.jsx',
     ].filter(Boolean),

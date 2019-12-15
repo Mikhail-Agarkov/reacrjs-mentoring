@@ -31,8 +31,10 @@ function renderHTML(html, preLoadedState) {
 export default function serverRenderer() {
     return (req, res) => {
         const initialState = {
-            searchBy: 'title',
-            sortBy: 'release_date'
+            movies: {
+                searchBy: 'title',
+                sortBy: 'release_date'
+            }
         };
         const store = configureStore(initialState);
         const context = {};
@@ -46,19 +48,24 @@ export default function serverRenderer() {
             />
         );
 
+        store.runSaga().done.then(() => {
+            const htmlString = renderToString(renderRoot());
+
+            if (context.url) {
+                res.writeHead(302, {
+                    Location: context.url,
+                });
+                res.end();
+                return;
+            }
+
+            const preLoadedState = store.getState();
+
+            res.send(renderHTML(htmlString, preLoadedState));
+        });
+
         renderToString(renderRoot());
 
-        if (context.url) {
-            res.writeHead(302, {
-                Location: context.url,
-            });
-            res.end();
-            return;
-        }
-
-        const htmlString = renderToString(renderRoot());
-        const preLoadedState = store.getState();
-
-        res.send(renderHTML(htmlString, preLoadedState));
+        store.close();
     };
 }

@@ -7,7 +7,7 @@ module.exports = merge(common, {
 
     target: 'node',
 
-    entry: './src/server/renderer.jsx',
+    entry: ['babel-polyfill', './src/server/renderer.jsx'],
 
     externals: [nodeExternals()],
 

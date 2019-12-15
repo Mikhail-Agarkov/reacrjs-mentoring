@@ -1,15 +1,16 @@
 import React from 'react';
 import StatusBar from "../StatusBar/StatusBar";
 import FilmList from "../FilmList/FilmList";
+import {bindActionCreators} from 'redux';
 import {connect} from "react-redux";
-import {fetchFilms, setSortBy} from "../../redux/actions";
+import {fetchMovies, searchMovies, setSortBy} from "../../redux/actions";
 import {withRouter} from 'react-router-dom';
 import {parse} from 'query-string';
 import Filter from "../Filter/Filter";
 
 class Main extends React.PureComponent {
 
-    componentDidMount() {
+    componentWillMount() {
         this.performSearch();
     }
 
@@ -21,9 +22,9 @@ class Main extends React.PureComponent {
         const {location} = this.props;
         if (location.pathname === '/search') {
             const values = parse(location.search);
-            this.props.fetchFilms(values.q, values.by, values.sort);
+            this.props.searchMovies(values.q, values.by, values.sort);
         } else {
-            this.props.fetchFilms();
+            this.props.fetchMovies();
         }
     };
 
@@ -55,9 +56,11 @@ class Main extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-    sortBy: state.sortBy
+    sortBy: state.movies.sortBy
 });
 
-const mapDispatchToProps = {fetchFilms: fetchFilms, setSortBy: setSortBy};
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchMovies, searchMovies, setSortBy
+}, dispatch);
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

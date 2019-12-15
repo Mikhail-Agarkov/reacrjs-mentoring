@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from '../../components/Header/Header'
 import FilmMain from "../../components/FilmMain/FilmMain";
-import {fetchFilms, viewFilmById} from "../../redux/actions";
+import {fetchMovies, viewMovieById} from "../../redux/actions";
 import {connect} from "react-redux";
 import FilmInfo from "../../components/Header/FilmInfo/FilmInfo";
+import {bindActionCreators} from "redux";
 
 class Film extends React.PureComponent {
 
-    componentDidMount() {
+    componentWillMount() {
         this.viewFilm();
     }
 
@@ -16,13 +17,10 @@ class Film extends React.PureComponent {
     }
 
     viewFilm = () => {
-        const {location, viewFilm, fetch} = this.props;
+        const {location, viewMovieById} = this.props;
         const id = location.pathname.slice(6);
 
-        viewFilm(id)
-            .then((film) => {
-                fetch(film.genres[0], 'genres', 'release_date');
-            });
+        viewMovieById(id);
     };
 
     render() {
@@ -37,6 +35,8 @@ class Film extends React.PureComponent {
     }
 }
 
-const mapDispatchToProps = {viewFilm: viewFilmById, fetch: fetchFilms};
+const mapDispatchToProps = dispatch => bindActionCreators({
+    viewMovieById, fetchMovies
+}, dispatch);
 
 export default connect(null, mapDispatchToProps)(Film);

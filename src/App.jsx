@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+import 'babel-polyfill';
 import React from 'react';
 import Home from "./views/Home/Home";
 import Film from "./views/Film/Film";
