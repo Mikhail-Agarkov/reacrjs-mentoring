@@ -7,22 +7,21 @@ import store from './redux/redux';
 import {Route, Switch} from 'react-router-dom';
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 import Footer from "./components/Footer/Footer";
+import {hot} from 'react-hot-loader';
 
-export default class App extends React.PureComponent {
+const App = ({Router, location, context}) => (
+    <Router location={location} context={context}>
+        <ErrorBoundary>
+            <Provider store={store}>
+                <Switch>
+                    <Route exact path={['/', '/search']} component={Home}/>
+                    <Route path='/film' component={Film}/>
+                    <Route path='*' component={NotFound}/>
+                </Switch>
+                <Footer logo='Netflix Roulette'/>
+            </Provider>
+        </ErrorBoundary>
+    </Router>
+);
 
-    render() {
-        return (
-            <ErrorBoundary>
-                <Provider store={store}>
-                    <Switch>
-                        <Route exact path={['/', '/search']} component={Home}/>
-                        <Route path='/film' component={Film}/>
-                        <Route path='*' component={NotFound}/>
-                    </Switch>
-                    <Footer logo='Netflix Roulette'/>
-                </Provider>
-            </ErrorBoundary>
-        );
-    }
-
-}
+export default hot(module)(App);
