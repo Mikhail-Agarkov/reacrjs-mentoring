@@ -1,11 +1,25 @@
-import {RECEIVED_FILM_INFO, RECEIVED_FILMS, SEARCH_BY, SORT_BY} from './actions';
+import {combineReducers} from 'redux';
+import {
+    FETCH_MOVIES,
+    moviesSaga,
+    RECEIVED_MOVIE_INFO,
+    RECEIVED_MOVIES,
+    SEARCH_BY,
+    SEARCH_MOVIES,
+    SORT_BY,
+    VIEW_MOVIE
+} from './actions';
+import {all} from 'redux-saga/effects';
 
 const reducer = (state = {}, action) => {
     switch (action.type) {
-        case RECEIVED_FILMS:
+        case FETCH_MOVIES:
+        case SEARCH_MOVIES:
+        case VIEW_MOVIE:
+            return {...state};
+        case RECEIVED_MOVIES:
             return {...state, films: action.payload};
-        case RECEIVED_FILM_INFO:
-            console.log(action.payload);
+        case RECEIVED_MOVIE_INFO:
             return {...state, filmInfo: action.payload};
         case SEARCH_BY:
             return {...state, searchBy: action.payload};
@@ -16,4 +30,15 @@ const reducer = (state = {}, action) => {
     }
 };
 
-export default reducer;
+function* rootSaga() {
+    yield all([
+        moviesSaga(),
+    ]);
+}
+
+const rootReducer = combineReducers({
+    movies: reducer,
+});
+
+export {rootReducer, rootSaga};
+

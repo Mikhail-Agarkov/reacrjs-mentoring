@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchFilms, setSearchBy} from '../../../redux/actions'
+import {searchMovies, setSearchBy} from '../../../redux/actions'
 import Filter from '../../Filter/Filter';
 import styles from './search.module.scss';
 import {withRouter} from 'react-router-dom';
+import {bindActionCreators} from "redux";
 
 class Search extends React.PureComponent {
 
@@ -38,10 +39,12 @@ class Search extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-    searchBy: state.searchBy,
-    sortBy: state.sortBy
+    searchBy: state.movies.searchBy,
+    sortBy: state.movies.sortBy
 });
 
-const mapDispatchToProps = {performSearch: fetchFilms, setSearchBy: setSearchBy};
+const mapDispatchToProps = dispatch => bindActionCreators({
+    searchMovies, setSearchBy
+}, dispatch);
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

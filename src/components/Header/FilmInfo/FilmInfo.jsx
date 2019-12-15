@@ -32,7 +32,7 @@ const FilmInfo = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    filmInfo: state.filmInfo
+    filmInfo: state.movies.filmInfo
 });
 
 export default connect(mapStateToProps)(FilmInfo);
