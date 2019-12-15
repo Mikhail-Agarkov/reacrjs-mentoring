@@ -10,8 +10,12 @@ export function search(searchTerm, searchBy, sortBy) {
     return call('/movies', params);
 }
 
+export function findFilmById(id) {
+    return call(`/movies/${id}`);
+}
+
 function call(api, params) {
-    return fetch(`${API_DOMAIN}${api}?${params}`)
+    return fetch(`${API_DOMAIN}${api}?${params || ''}`)
         .then(
             response => response.json(),
             error => console.log('Error fetching films from API', error)

@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Mikhail-Agarkov/reacrjs-mentoring#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "query-string": "^6.9.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.3",

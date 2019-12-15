@@ -10,5 +10,6 @@ module.exports = merge(config, {
         hot: true,
         open: true,
         port: 9000,
+        historyApiFallback: true
     }
 });
