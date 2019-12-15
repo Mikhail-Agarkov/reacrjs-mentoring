@@ -1,9 +1,10 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
+import configureStore from '../redux/store';
 import App from "../App";
 
-function renderHTML(html) {
+function renderHTML(html, preLoadedState) {
     return `
       <!doctype html>
       <html lang="en">
@@ -19,6 +20,9 @@ function renderHTML(html) {
         </head>
         <body>
           <div id="root">${html}</div>
+          <script>
+            window.PRE_LOADED_STATE = ${JSON.stringify(preLoadedState).replace(/</g, '\\u003c')}
+          </script>
         </body>
       </html>
   `;
@@ -26,17 +30,23 @@ function renderHTML(html) {
 
 export default function serverRenderer() {
     return (req, res) => {
+        const initialState = {
+            searchBy: 'title',
+            sortBy: 'release_date'
+        };
+        const store = configureStore(initialState);
         const context = {};
 
-        const root = (
+        const renderRoot = () => (
             <App
                 context={context}
                 location={req.url}
                 Router={StaticRouter}
+                store={store}
             />
         );
 
-        const htmlString = renderToString(root);
+        renderToString(renderRoot());
 
         if (context.url) {
             res.writeHead(302, {
@@ -46,6 +56,9 @@ export default function serverRenderer() {
             return;
         }
 
-        res.send(renderHTML(htmlString));
+        const htmlString = renderToString(renderRoot());
+        const preLoadedState = store.getState();
+
+        res.send(renderHTML(htmlString, preLoadedState));
     };
 }
