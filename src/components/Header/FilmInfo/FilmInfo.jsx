@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './filminfo.module.scss';
-import {getYearFromDateString} from '../../../util/utils'
+import getYearFromDateString from '../../../util/utils'
 import {connect} from "react-redux";
 
 const FilmInfo = (props) => {

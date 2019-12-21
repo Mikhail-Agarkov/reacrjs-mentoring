@@ -1,3 +1,3 @@
-export function getYearFromDateString(date) {
+export default function getYearFromDateString(date) {
     return date.split('-')[0];
 }

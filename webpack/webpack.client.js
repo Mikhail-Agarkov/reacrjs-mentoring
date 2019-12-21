@@ -20,7 +20,7 @@ module.exports = merge(common, {
         isDevMod && new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css',
-        })
+        }),
     ].filter(Boolean),
 
     module: {
@@ -35,16 +35,16 @@ module.exports = merge(common, {
                         options: {
                             modules: true,
                             localIdentName: '[name]-[hash:5]',
-                        }
+                        },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
                         },
-                    }
-                ]
-            }
-        ]
-    }
+                    },
+                ],
+            },
+        ],
+    },
 });

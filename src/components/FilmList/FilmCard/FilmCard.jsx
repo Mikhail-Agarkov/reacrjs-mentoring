@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './filmcard.module.scss';
 import {Link} from 'react-router-dom';
-import {getYearFromDateString} from '../../../util/utils'
+import getYearFromDateString from '../../../util/utils'
 
 const FilmCard = (props) => {
     const {poster_path, title, release_date, genres, id} = props['film'];
