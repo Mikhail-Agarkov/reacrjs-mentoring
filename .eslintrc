@@ -23,5 +23,8 @@
   ],
   "globals": {
     "fetch": false
-  }
+  },
+  "ignorePatterns": [
+    "*.stories.js"
+  ]
 }
