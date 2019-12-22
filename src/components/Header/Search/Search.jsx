@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import {connect} from 'react-redux';
 import {searchMovies, setSearchBy} from '../../../redux/actions'
@@ -6,7 +7,19 @@ import styles from './search.module.scss';
 import {withRouter} from 'react-router-dom';
 import {bindActionCreators} from "redux";
 
-class Search extends React.PureComponent {
+type Props = {
+    'searchBy': string,
+    'sortBy': string,
+    'title': string,
+    'placeholder': string,
+    'button': string,
+    'history': Function,
+    'setSearchBy': Function
+};
+
+class Search extends React.PureComponent<Props> {
+
+    input: Object;
 
     constructor(props) {
         super(props);

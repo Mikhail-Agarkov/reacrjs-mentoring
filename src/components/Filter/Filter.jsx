@@ -1,7 +1,21 @@
+//@flow
 import React from 'react';
 import styles from './filter.module.scss'
 
-const Filter = (props) => (
+type Props = {
+    title: string,
+    selected: string,
+    buttons: Array<Button>
+}
+
+type Button = {
+    text: string,
+    value: string,
+    key: number,
+    handler: Function
+}
+
+const Filter = (props: Props) => (
     <div className={styles.content}>
         <span className={styles.text}>{props.title}</span>
         <div className={styles.buttonGroup}>

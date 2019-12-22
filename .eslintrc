@@ -25,6 +25,7 @@
     "fetch": false
   },
   "ignorePatterns": [
-    "*.stories.js"
+    "*.stories.js",
+    "flow-typed"
   ]
 }
