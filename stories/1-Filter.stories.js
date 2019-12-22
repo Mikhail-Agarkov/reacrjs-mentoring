@@ -4,7 +4,7 @@ import Filter from '../src/components/Filter/Filter';
 
 export default {
     title: 'Filter',
-    decorators: [withKnobs],
+    decorators: [withKnobs]
 };
 
 export const view = () => {
