@@ -9,7 +9,9 @@ module.exports = {
 
     output: {
         filename: 'js/[name].js',
-        path: path.resolve('./public'),
+        chunkFilename: '[name].js',
+        path: path.resolve('./'),
+        publicPath: "/"
     },
 
     plugins: [

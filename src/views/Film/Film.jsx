@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../../components/Header/Header'
-import FilmMain from "../../components/FilmMain/FilmMain";
-import {fetchMovies, viewMovieById} from "../../redux/actions";
-import {connect} from "react-redux";
-import FilmInfo from "../../components/Header/FilmInfo/FilmInfo";
-import {bindActionCreators} from "redux";
+import FilmMain from '../../components/FilmMain/FilmMain';
+import {fetchMovies, viewMovieById} from '../../redux/actions';
+import {connect} from 'react-redux';
+import FilmInfo from '../../components/Header/FilmInfo/FilmInfo';
+import {bindActionCreators} from 'redux';
 
 class Film extends React.PureComponent {
 
