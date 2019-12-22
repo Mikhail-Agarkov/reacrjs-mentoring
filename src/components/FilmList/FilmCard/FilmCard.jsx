@@ -1,9 +1,23 @@
+//@flow
 import React from 'react';
 import styles from './filmcard.module.scss';
 import {Link} from 'react-router-dom';
-import {getYearFromDateString} from '../../../util/utils'
+import getYearFromDateString from '../../../util/utils'
 
-const FilmCard = (props) => {
+type Film = {
+    film: Object<Props>
+}
+
+type Props = {
+    poster_path: boolean,
+    title: string,
+    release_data: string,
+    genres: Array<string>,
+    id: string,
+    film: any
+}
+
+const FilmCard = (props: Film) => {
     const {poster_path, title, release_date, genres, id} = props['film'];
     return (
         <Link to={`/film/${id}`} className={styles.content} key={id}>

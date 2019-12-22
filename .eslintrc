@@ -1,0 +1,31 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "max-len": [
+      1,
+      120,
+      2,
+      {
+        "ignoreComments": true
+      }
+    ]
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "globals": {
+    "fetch": false
+  },
+  "ignorePatterns": [
+    "*.stories.js",
+    "flow-typed"
+  ]
+}

@@ -27,17 +27,17 @@ module.exports = merge(common, {
                         options: {
                             modules: true,
                             localIdentName: '[name]-[hash:5]',
-                        }
+                        },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
                         },
-                    }
+                    },
                 ],
-            }
-        ]
-    }
+            },
+        ],
+    },
 
 });

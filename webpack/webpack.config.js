@@ -15,14 +15,14 @@ module.exports = {
     plugins: [
         new webpack.ProgressPlugin(),
         isDevMod && new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin("[name]-[chunkhash].css"),
+        new ExtractTextPlugin('[name]-[chunkhash].css'),
     ].filter(Boolean),
 
     resolve: {
         extensions: ['*', '.js', '.jsx'],
         alias: {
             'react-dom': '@hot-loader/react-dom',
-        }
+        },
     },
 
     module: {
@@ -30,14 +30,14 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/,
                 use: [
-                    'file-loader'
-                ]
-            }
-        ]
-    }
+                    'file-loader',
+                ],
+            },
+        ],
+    },
 };
